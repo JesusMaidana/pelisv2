@@ -172,9 +172,10 @@ nav ul {
 
 
 .grid-pelis {
-    border: 4px solid red;
+    /* border: 4px solid red; */
     display: grid;
     grid-template-columns: repeat(4, 1fr) ;
+    gap: 10px;
 
 }
 
