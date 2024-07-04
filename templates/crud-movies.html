@@ -29,11 +29,36 @@
 
             <label for="adult">Adulto</label>
             <input type="checkbox" id="adult" name="adult">
+
+            <label for="actors">actores</label>
+            <input type="text" id="actors" name="actors" required >
+
+            <label for="directors">directores</label>
+            <input type="text" id="directors" name="directors" required >
             
+            <label for="genres">Géneros de la pelicula</label>
+            <input type="text" id="genres" name="genres" required >
+
+            <label for="Sinopsis">Sinopsis de la pelicula</label>
+            <input type="text" id="Sinopsis" name="Sinopsis" required >
+
+            <label for="time">Ingrese la Duración de la Película (HH:MM:SS)</label>
+            <input type="text" id="time" name="time" pattern="([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])" required >
+
             <!-- <button type="submit">Agregar Película</button> -->
             <button type="submit" id="btnSave">Agregar Película</button>
             <button type="button" id="cancelEdit">Cancelar</button>
         </form>
+        <script>
+            document.querySelector('form').addEventListener('submit', function(event) {
+                const input = document.getElementById('time');
+                const pattern = /^([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/;
+                if (!pattern.test(input.value)) {
+                    alert('Por favor, ingrese un horario válido en el formato HH:MM:SS');
+                    event.preventDefault();
+                }
+            });
+        </script>
         <div id="message"></div>
         <h2>Listado de Películas</h2>
         <ul id="moviesList"></ul>

@@ -8,12 +8,22 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
   const release_year = document.getElementById('release_year').value;
   const adult = document.getElementById('adult').checked ? 1 : 0;
   const imagen = document.getElementById('imagenPeli').files[0];
+  const actors = document.getElementById('actors').value;
+  const directors = document.getElementById('directors').value;
+  const genres = document.getElementById('genres').value;
+  const sinopsis = document.getElementById('sinopsis').value;
+  const time = document.getElementById('time').value;
 
   let formData = new FormData();
   formData.append('title', title);
   formData.append('release_year', release_year);
   formData.append('adult', adult);
   formData.append('imagen', imagen);
+  formData.append('actors', actors);
+  formData.append('directors', directors);
+  formData.append('genres', genres);
+  formData.append('sinopsis', sinopsis);
+  formData.append('time', time);
 
   let url = `${API_MOVIES}/movies`;
   let method = 'POST';
