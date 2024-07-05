@@ -173,7 +173,87 @@ video {
     color: #FFF;
 }
 
+/* cartas expandibles */
 
+.container {
+    display: flex;
+    width: 100vw;
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* IMAGES SOURCES  */
+/* https://wallpapercave.com/pc-games-wallpapers  */
+
+.image-1 {
+    background-image: url(https://images4.alphacoders.com/909/909185.jpg);
+}
+
+.image-2 {
+    background-image: url(https://images2.alphacoders.com/724/thumb-1920-724132.jpg);
+}
+
+.image-3 {
+    background-image: url(https://images3.alphacoders.com/678/678085.jpg);
+}
+
+.image-4 {
+    background-image: url(https://images8.alphacoders.com/132/1329247.jpeg);
+}
+
+.image-5 {
+    background-image: url(https://images4.alphacoders.com/132/1327480.png);
+}
+
+.slide {
+    position: relative;
+    height: 80vh;
+    flex: 0.5;
+    border-radius: 50px;
+    color: #fff;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 700ms ease-in;
+}
+
+.slide h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    font-size: 24px;
+}
+
+@media (max-width: 480px) {
+
+    .slide:nth-of-type(4),
+    .slide:nth-of-type(5) {
+        display: none;
+    }
+}
+
+/* JavaScript */
+.slide.active {
+    flex: 5;
+}
+
+.slide.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+
+
+
+
+
+
+/* boton de busqueda */
 #search {
     display: flex;
     flex-direction: column;
