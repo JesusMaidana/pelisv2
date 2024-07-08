@@ -1,95 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créditos del Grupo</title>
-    <link rel="stylesheet" href="../static/css/creditos.css"> <!-- Enlaza tu archivo de estilos CSS -->
+    <title>Movie Detail</title>
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/detail.css">
 </head>
+
 <body>
     <header>
-        
         <nav>
-            <!-- logo y nombre sitio -->
-            <div id="logo">
-                <a href="../index.html">
-                    <!-- aqui icono de fontawesome -->
-                    <i class="fa-solid fa-film fa-spin"></i>
-                    <span class="logo-text"> 
-                        Amazhon
-                    </span>
-                </a>
-            </div>    
-            <!-- menu de acciones -->
-
+            <h1><a href="../index.html" class="home-link">CaC - Pelis</a></h1>
             <ul>
-                <!-- <li> Tendencias </li> -->
-                <li>
-                    <!-- ruta relativa a mi archivo actual -->
-                    <a href="./templates/register.html">Registrarse</a>
-                </li>
-                <li>
-                    <a 
-                    href="https://developer.themoviedb.org/docs"
-                    target="_blank"
-                    title="Ir a la pagina que me dara las pelis para este hermoso frontend"
-                    class="primer-clase"
-                    >
-                    API
-                </a>
-                </li>
-                
-                <li id="usuario">
-                    <a class="btn-primary" href="#">
-                        
-                        <i class="fas fa-sign-in-alt"></i>
-                        <span class="login-text">
-                            Iniciar Sesión
-                        </span>    
-                    </a> 
-                </li>
+                <!-- <li><a href="#">Tendencias</a></li> -->
+                <li><a href="../templates/register.html">Registrarse</a></li>
+                <li><a href="https://developer.themoviedb.org/docs" target="_blank"
+                        title="Ir a la pagina que me dara las pelis para este hermoso frontend">API</a></li>
+                <li><a href="../templates/login.html">Iniciar sesión</a></li>
             </ul>
         </nav>
-        <section id="creditos">
-            <h2>Créditos</h2>
-            <h3>Grupo D</h3>
-          </section>
-        
     </header>
     <main>
-        
-        
-        <section class="integrante">
-            <h2>Nombre del Integrante </h2>
-            <h3>Alexis Aragón Rodriguez</h3>
-            
+        <section id="banner-movie">
+            <div class="movie-detail">
+                <div class="movie-detail-poster">
+                    <img src="../static/img/avengerInfinityWar.jpg" alt="Avenger Infinity War Poster">
+                </div>
+                <div class="movie-detail-info">
+                    <div class="movie-detail-info-title">
+                        <h2>The Super Mario Bros. Movie <span>(2023)</span></h2>
+                        <p>04/05/2023 • Animation, Family, Adventure, Fantasy, Comedy • 1h 33m</p>
+                    </div>
+                    <div class="movie-detail-info-overview">
+                        <h3>Overview</h3>
+                        <p>While working underground to fix a water main, Brooklyn plumbers—and brothers—Mario and Luigi
+                            are transported down a mysterious pipe and wander into a magical new world. But when the
+                            brothers are separated, Mario embarks on an epic quest to find Luigi.</p>
+                    </div>
+                    <div class="movie-detail-info-credits">
+                        <p><strong>Aaron Horvath</strong> - Director</p>
+                        <p><strong>Michael Jelenic</strong> - Director</p>
+                        <p><strong>Matthew Fogel</strong> - Writer</p>
+                    </div>
+                    <button id="back-to-index">Volver al Inicio</button>
+                </div>
+            </div>
         </section>
-        
-        <section class="integrante">
-            <h2>Nombre del Integrante </h2>
-            <h3>Oscar Jesús Maidana</h3>
+        <section id="more-info">
+            <div>
+                <h2>Trailer</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/aAoKqx9wb1I"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="more-info-table">
+                <table>
+                    <tr>
+                        <td colspan="2" align="center"><strong>Info</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estado</strong></td>
+                        <td>Estrenada</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lenguaje</strong></td>
+                        <td>Inglés</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Presupuesto</strong></td>
+                        <td>$100,000,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ganancia</strong></td>
+                        <td>$500,000,000</td>
+                    </tr>
+                </table>
+            </div>
         </section>
-        <section class="integrante">
-            <h2>Nombre del Integrante </h2>
-            <h3>Ezequiel Elías Fiege</h3>
-        </section>
-        <section class="integrante">
-            <h2>Nombre del Integrante </h2>
-            <h3>Facundo Agustín Albertus</h3>
-        </section>
-        <section class="integrante">
-            <h2>Nombre del Integrante </h2>
-            <h3>Pablo Acosta Cuesta</h3>
-        </section>
-        
-
     </main>
-    <footer>
-        <a href="#">Terminos y condiciones</a>
-        <a href="./pregfrecuentes.html">Preguntas Frecuentes</a>
-        <a href="#">Ayuda</a>
-        <a href="creditos.html">Creditos</a>
-        <a href="./crud-movies.html">CRUD Peliculas</a>
-    </footer>
+    <script>
+        document.getElementById('back-to-index').addEventListener('click', function () {
+            window.location.href = '../index.html';
+        });
+    </script>
 </body>
+
 </html>
