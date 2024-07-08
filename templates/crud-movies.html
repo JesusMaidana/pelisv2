@@ -36,8 +36,19 @@
             <label for="directors">directores</label>
             <input type="text" id="directors" name="directors" required >
             
-            <label for="genres">Géneros de la pelicula</label>
-            <input type="text" id="genres" name="genres" required >
+            <label for="genres">Géneros de la película</label>
+            <div id="genres">
+                <label><input type="checkbox" name="genres" value="accion"> Acción</label>
+                <label><input type="checkbox" name="genres" value="aventura"> Aventura</label>
+                <label><input type="checkbox" name="genres" value="comedia"> Comedia</label>
+                <label><input type="checkbox" name="genres" value="drama"> Drama</label>
+                <label><input type="checkbox" name="genres" value="fantasia"> Fantasía</label>
+                <label><input type="checkbox" name="genres" value="terror"> Terror</label>
+                <label><input type="checkbox" name="genres" value="ciencia_ficcion"> Ciencia Ficción</label>
+                <label><input type="checkbox" name="genres" value="romance"> Romance</label>
+                <label><input type="checkbox" name="genres" value="thriller"> Thriller</label>
+                <!-- Agrega más géneros según sea necesario -->
+            </div>
 
             <label for="sinopsis">sinopsis de la pelicula</label>
             <input type="text" id="sinopsis" name="sinopsis" required >
@@ -64,5 +75,6 @@
         <ul id="moviesList"></ul>
     </div>
     <script type="module" src="../static/js/crud-movies.js"></script>
+    <script type="module" src="../static/js/listado.js"></script>
 </body>
 </html>

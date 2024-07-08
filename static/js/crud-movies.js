@@ -10,7 +10,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
   const imagen = document.getElementById('imagenPeli').files[0];
   const actors = document.getElementById('actors').value;
   const directors = document.getElementById('directors').value;
-  const genres = document.getElementById('genres').value;
+  const genres = Array.from(document.querySelectorAll('input[name="genres"]:checked')).map(checkbox => checkbox.value);
   const sinopsis = document.getElementById('sinopsis').value;
   const time = document.getElementById('time').value;
 
@@ -21,7 +21,7 @@ document.getElementById('movieForm').addEventListener('submit', function(event) 
   formData.append('imagen', imagen);
   formData.append('actors', actors);
   formData.append('directors', directors);
-  formData.append('genres', genres);
+  formData.append('genres', JSON.stringify(genres)); // Convertir la lista de géneros en una cadena JSON
   formData.append('sinopsis', sinopsis);
   formData.append('time', time);
 
@@ -101,6 +101,15 @@ window.editMovie = (id) => {
       document.getElementById('title').value = movie.title;
       document.getElementById('release_year').value = movie.release_year;
       document.getElementById('adult').checked = movie.adult === 1;
+      
+      // Convertir la cadena de géneros en una lista y seleccionar los checkboxes correspondientes
+      const genres = JSON.parse(movie.genres);
+      document.querySelectorAll('input[name="genres"]').forEach(checkbox => {
+        checkbox.checked = genres.includes(checkbox.value);
+      });
+      
+      document.getElementById('sinopsis').value = movie.sinopsis;
+      document.getElementById('time').value = movie.time;
       document.getElementById('btnSave').innerText = 'Guardar Cambios';
 
       
@@ -116,6 +125,9 @@ const clearForm = () => {
   document.getElementById('title').value = '';
   document.getElementById('release_year').value = '';
   document.getElementById('adult').checked = false;
+  document.getElementById('genres').value = ''; // Añadir esta línea para limpiar el campo de género
+  document.getElementById('sinopsis').value = '';
+  document.getElementById('time').value = '';
 
   // Restaurar el texto original del botón de submit
   document.querySelector('button[type="submit"]').innerText = 'Agregar Película';
